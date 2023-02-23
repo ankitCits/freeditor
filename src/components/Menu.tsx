@@ -18,7 +18,7 @@ interface IMenuItems {
   tooltip?: string;
 }
 
-const Menu = () => {
+const Menu = (props) => {
   const { UIStore, canvasStore, imageStore } = useStore();
 
   const handleClick = (modeName: ModeName) => {
@@ -49,69 +49,69 @@ const Menu = () => {
     {
       icon: <Crop />,
       name: "crop",
-      handler: () => handleClick("crop")
+      handler: () => handleClick("crop"),
     },
     {
       icon: <Flip />,
       name: "adjust",
-      handler: () => handleClick("adjust")
+      handler: () => handleClick("adjust"),
     },
     {
       icon: <Draw />,
       name: "drawing",
-      handler: () => handleClick("drawing")
+      handler: () => handleClick("drawing"),
     },
     {
       icon: <Text />,
       name: "text",
-      handler: () => handleClick("text")
+      handler: () => handleClick("text"),
     },
     {
       icon: <Adjust />,
       name: "effects",
-      handler: () => handleClick("effects")
-    }
+      handler: () => handleClick("effects"),
+    },
   ];
-  return useObserver(() =>
-  <>
-
+  return useObserver(() => (
+    <>
       <section className="menu">
-      <img
-        src="https://freeditor.wooshelf.in/static/media/LOGOIMG.d8fad20e0596bbaad676.png"
-        alt="new"
-        style={{
-          width: 50,
-          height: 50,
-          top:"5%",
-          position:'fixed',
-          // justifyContent:'center'
-          left:'1%'
-        }}
-      />
-      <div className="menu__wrapper">
-        {items.map((item, index) => {
-          const tooltip = item.tooltip || item.name;
-          return (
-            <Tooltip key={index} content={tooltip} placement="right">
-              <div
-                className={`menu__item ${canvasStore.mode === item.name
-                  ? "menu__item_active"
-                  : ""} ${!imageStore.url && item.name !== "search"
-                  ? "disabled"
-                  : ""}`}
-                onClick={item.handler}
-              >
-                {item.icon}
-              </div>
-            </Tooltip>
-          );
-        })}
-      </div>
-    </section>
-
-  </>
-
-  );
+        <img
+          src="https://freeditor.wooshelf.in/static/media/LOGOIMG.d8fad20e0596bbaad676.png"
+          alt="new"
+          style={{
+            width: 50,
+            height: 50,
+            top: "5%",
+            position: "fixed",
+            // justifyContent:'center'
+            left: "1%",
+          }}
+          onClick={() => {
+            props.history.push("/");
+          }}
+        />
+        <div className="menu__wrapper">
+          {items.map((item, index) => {
+            const tooltip = item.tooltip || item.name;
+            return (
+              <Tooltip key={index} content={tooltip} placement="right">
+                <div
+                  className={`menu__item ${
+                    canvasStore.mode === item.name ? "menu__item_active" : ""
+                  } ${
+                    !imageStore.url && item.name !== "search" ? "disabled" : ""
+                  }`}
+                  onClick={item.handler}
+                >
+                  {item.icon}
+                </div>
+              </Tooltip>
+            );
+          })}
+        </div>
+      </section>
+    </>
+  ));
 };
 
 export default Menu;

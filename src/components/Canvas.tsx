@@ -8,24 +8,21 @@ const Canvas = () => {
   const rootStore = useStore();
   const { UIStore } = rootStore;
 
-  useEffect(
-    () => {
-      if (!canvasEl) {
-        return;
-      }
-      rootStore.addCanvasToDocument(canvasEl);
-    },
-    [canvasEl]
-  );
+  useEffect(() => {
+    if (!canvasEl) {
+      return;
+    }
+    rootStore.addCanvasToDocument(canvasEl);
+  }, [canvasEl]);
 
-  return useObserver(() =>
+  return useObserver(() => (
     <section
-      className={`canvas custom-scrollbar ${UIStore.isToolbarOpen
-        ? "canvas_toolbar-open"
-        : ""}`}
+      className={`canvas custom-scrollbar ${
+        UIStore.isToolbarOpen ? "canvas_toolbar-open" : ""
+      }`}
       ref={canvasRef}
     />
-  );
+  ));
 };
 
 export default Canvas;
