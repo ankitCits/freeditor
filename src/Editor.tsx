@@ -1,10 +1,10 @@
 import React from "react";
 import Menu from "./components/Menu";
 import Header from "./components/Header/Header";
-import Canvas from "./components/Canvas";
 import Toolbar from "./components/Toolbar/Toolbar";
+import Canvas from "./components/Canvas";
 
-const App = () => {
+const EditPage = () => {
   return (
     <div className="app">
       <Header />
@@ -15,4 +15,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default EditPage;

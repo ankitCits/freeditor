@@ -14,7 +14,7 @@ import ToolbarEffects from "./ToolbarEffects";
 
 const Toolbar: React.FC = () => {
   const { UIStore, canvasStore } = useStore();
-  const contentMap: {[name: string]: JSX.Element} = {
+  const contentMap: { [name: string]: JSX.Element } = {
     search: <ToolbarSearch />,
     crop: <ToolbarCrop />,
     adjust: <ToolbarRotate />,
@@ -26,19 +26,22 @@ const Toolbar: React.FC = () => {
   return useObserver(() => (
     <TransitionGroup component={null}>
       {UIStore.isToolbarOpen && (
-        <CSSTransition
-          timeout={600}
-          classNames="toolbar"
-        >
-          <section className={`toolbar custom-scrollbar ${
-            canvasStore.mode === "search" ? "toolbar_search" : ""
-          }`}>
+        <CSSTransition timeout={600} classNames="toolbar">
+          <section
+            className={`toolbar custom-scrollbar ${
+              canvasStore.mode === "search" ? "toolbar_search" : ""
+            }`}
+          >
             <div className="toolbar__header">
-              <h4 className="toolbar__title">{canvasStore.mode}</h4>
-              <Close onClick={() => {
-                canvasStore.resetToBaseScale();
-                UIStore.closeToolbar();
-              }}/>
+              <h4 className="toolbar__title" style={{ color: "#fff" }}>
+                {canvasStore.mode}
+              </h4>
+              <Close
+                onClick={() => {
+                  canvasStore.resetToBaseScale();
+                  UIStore.closeToolbar();
+                }}
+              />
             </div>
             {contentMap[canvasStore.mode]}
           </section>

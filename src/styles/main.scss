@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 @import "./variables";
 @import "./components/app";
@@ -24,7 +24,12 @@ svg {
   fill: $text-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $text-color;
   margin: 0;
 }
@@ -47,9 +52,9 @@ input {
   color: $text-color;
 }
 
-input[type=number] {
-  color:#969696;
-  transition: all .2s;
+input[type="number"] {
+  color: #969696;
+  transition: all 0.2s;
   &:focus {
     border: 0.156vw solid $text-color;
     outline: none;
@@ -60,26 +65,26 @@ input[type=number] {
   }
 }
 
-input[type=color] {
-	-webkit-appearance: none;
-	border: none;
-	width: 100%;
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  width: 100%;
   height: 100%;
   padding: 0;
   cursor: pointer;
   background-color: transparent;
-  transition: all .3s;
+  transition: all 0.3s;
   &:focus {
     outline: none;
   }
 }
 
-input[type=color]::-webkit-color-swatch-wrapper {
-	padding: 0;
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
 }
 
-input[type=color]::-webkit-color-swatch {
-	border: none;
+input[type="color"]::-webkit-color-swatch {
+  border: none;
 }
 
 .hidden {
@@ -152,7 +157,7 @@ input[type=color]::-webkit-color-swatch {
   outline: 0;
   text-align: center;
   -webkit-appearance: none;
-  box-shadow: inset 0 0.078vw 0.156vw rgba(0,0,0,.1);
+  box-shadow: inset 0 0.078vw 0.156vw rgba(0, 0, 0, 0.1);
   &:before {
     content: "";
     display: block;
@@ -162,7 +167,8 @@ input[type=color]::-webkit-color-swatch {
     position: absolute;
     top: 50%;
     left: -0.234vw;
-    transition: all 350ms cubic-bezier(0, 0.95, 0.38, 0.98), background 150ms ease;
+    transition: all 350ms cubic-bezier(0, 0.95, 0.38, 0.98),
+      background 150ms ease;
     background: rgba(0, 0, 0, 0.2);
     transform: translate3d(0, -50%, 0) scale(0);
   }
@@ -175,7 +181,8 @@ input[type=color]::-webkit-color-swatch {
     position: absolute;
     top: 50%;
     left: -0.234vw;
-    transition: all 350ms cubic-bezier(0, 0.95, 0.38, 0.98), background 150ms ease;
+    transition: all 350ms cubic-bezier(0, 0.95, 0.38, 0.98),
+      background 150ms ease;
     background: $disabled-color;
     border: 0.078vw solid rgba(0, 0, 0, 0.1);
     transform: translate3d(0, -50%, 0);
@@ -218,7 +225,7 @@ input[type=color]::-webkit-color-swatch {
     border: none;
     width: 1.09375vw;
     height: 1.09375vw;
-    margin-top: -.390625vw;
+    margin-top: -0.390625vw;
     &:active {
       box-shadow: none;
       border-color: none;
@@ -231,6 +238,6 @@ input[type=color]::-webkit-color-swatch {
 
   .rc-slider-track {
     background-color: $text-color;
-    height: .3125vw;
+    height: 0.3125vw;
   }
 }
