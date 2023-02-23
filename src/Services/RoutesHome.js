@@ -4,6 +4,12 @@ import RouteContext from "./RouteContext";
 import NoPage from "../Page/NoPage";
 import EditPage from "../Page/Editor";
 import HomePage from "../Page/HomePage";
+import AboutUs from "../Page/AboutUs";
+import Company from "../Page/Company";
+import ContactUs from "../Page/ContactUs";
+import PrivacyPolicy from "../Page/PrivacyPolicy";
+import TermsCondition from "../Page/TermsCondition";
+import Faq from "../Page/Faq";
 
 const RoutesHome = (props) => {
   return (
@@ -20,7 +26,32 @@ const RoutesHome = (props) => {
           path={"/image-editor"}
           render={(route) => <EditPage {...route} />}
         />
-
+        <Route
+          exact
+          path={"/aboutus"}
+          render={(route) => <AboutUs {...route} />}
+        />
+        <Route
+          exact
+          path={"/company"}
+          render={(route) => <Company {...route} />}
+        />
+        <Route
+          exact
+          path={"/contact-us"}
+          render={(route) => <ContactUs {...route} />}
+        />
+        <Route
+          exact
+          path={"/privacy-policy"}
+          render={(route) => <PrivacyPolicy {...route} />}
+        />
+        <Route
+          exact
+          path={"/terms-conditions"}
+          render={(route) => <TermsCondition {...route} />}
+        />
+        <Route exact path={"/faq"} render={(route) => <Faq {...route} />} />
         <Route exact path={"*"} render={(route) => <NoPage {...route} />} />
       </Switch>
     </RouteContext.Provider>

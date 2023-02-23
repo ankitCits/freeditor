@@ -4,7 +4,7 @@ import Header from "../components/Header/Header";
 import Menu from "../components/Menu";
 import Toolbar from "../components/Toolbar/Toolbar";
 
-const EditPage = (props) => {
+const EditPage = (props: any) => {
   useEffect(() => {
     document.body.style.backgroundColor = "#1E1E1E";
     document.body.style.overflow = "hidden";

@@ -3,7 +3,6 @@ import BannerSecMobileImage from "../components/HomePage/BannerSecMobile-Image";
 import BannerSection from "../components/HomePage/BannerSection";
 import CardSection from "../components/HomePage/CardSection";
 import DesignTemplateSection from "../components/HomePage/DesignTemplateSection";
-import Footer from "../components/HomePage/Footer";
 import FrequentlyAskedQuestions from "../components/HomePage/FrequentlyAskedQuestions";
 import HowitWorks from "../components/HomePage/HowitWorks";
 import Newsletter from "../components/HomePage/Newsletter";
@@ -12,17 +11,13 @@ import StartDesigning from "../components/HomePage/StartDesigning";
 import UploadVideoSection from "../components/HomePage/UploadVideoSection";
 import "../../src/App.css";
 import "antd/dist/antd.css";
-import Header from "../components/HomePage/Header";
+import AppBase from "../components/AppBase";
 
 const HomePage = (props) => {
   const [selectedTool, setSelectedTool] = useState(null);
-  useEffect(() => {
-    document.body.style.backgroundColor = "#fff";
-    document.body.style.overflow = "auto";
-  }, []);
+
   return (
-    <>
-      <Header />
+    <AppBase>
       <BannerSection style={{ margin: "20px" }} />
       <BannerSecMobileImage />
       <HowitWorks style={{ margin: "20px" }} />
@@ -33,8 +28,7 @@ const HomePage = (props) => {
       <OnlineEditingCompany style={{ margin: "20px" }} />
       <Newsletter style={{ margin: "20px" }} />
       <FrequentlyAskedQuestions style={{ margin: "20px" }} />
-      <Footer />
-    </>
+    </AppBase>
   );
 };
 

@@ -18,7 +18,7 @@ interface IMenuItems {
   tooltip?: string;
 }
 
-const Menu = (props) => {
+const Menu = (props: any) => {
   const { UIStore, canvasStore, imageStore } = useStore();
 
   const handleClick = (modeName: ModeName) => {
