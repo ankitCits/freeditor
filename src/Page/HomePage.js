@@ -10,24 +10,56 @@ import OnlineEditingCompany from "../components/HomePage/OnlineEditingCompany";
 import StartDesigning from "../components/HomePage/StartDesigning";
 import UploadVideoSection from "../components/HomePage/UploadVideoSection";
 import "../../src/App.css";
-import "antd/dist/antd.css";
+
 import AppBase from "../components/AppBase";
 
 const HomePage = (props) => {
   const [selectedTool, setSelectedTool] = useState(null);
 
   return (
-    <AppBase>
-      <BannerSection style={{ margin: "20px" }} />
-      <BannerSecMobileImage />
-      <HowitWorks style={{ margin: "20px" }} />
+    <AppBase
+      {...props}
+      selectedTool={selectedTool}
+      setSelectedTool={setSelectedTool}
+    >
+      <BannerSection
+        {...props}
+        setSelectedTool={setSelectedTool}
+        style={{ margin: "20px" }}
+      />
+      <BannerSecMobileImage {...props} setSelectedTool={setSelectedTool} />
+      <HowitWorks
+        {...props}
+        setSelectedTool={setSelectedTool}
+        style={{ margin: "20px" }}
+      />
       <UploadVideoSection {...props} setSelectedTool={setSelectedTool} />
       <StartDesigning {...props} setSelectedTool={setSelectedTool} />
-      <CardSection style={{ margin: "20px" }} />
-      <DesignTemplateSection style={{ margin: "20px" }} />
-      <OnlineEditingCompany style={{ margin: "20px" }} />
-      <Newsletter style={{ margin: "20px" }} />
-      <FrequentlyAskedQuestions style={{ margin: "20px" }} />
+      <CardSection
+        {...props}
+        setSelectedTool={setSelectedTool}
+        style={{ margin: "20px" }}
+      />
+      <DesignTemplateSection
+        {...props}
+        setSelectedTool={setSelectedTool}
+        style={{ margin: "20px" }}
+      />
+      <OnlineEditingCompany
+        {...props}
+        setSelectedTool={setSelectedTool}
+        style={{ margin: "20px" }}
+      />
+      <Newsletter
+        {...props}
+        setSelectedTool={setSelectedTool}
+        style={{ margin: "20px" }}
+      />
+      <FrequentlyAskedQuestions
+        {...props}
+        setSelectedTool={setSelectedTool}
+        style={{ margin: "20px" }}
+      />
     </AppBase>
   );
 };

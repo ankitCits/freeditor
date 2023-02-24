@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import { NavLink } from "react-router-dom";
 
-const BannerSection = () => {
+const BannerSection = (props) => {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
   return (
     <>
       <div className="bannerSec">
@@ -15,9 +18,16 @@ const BannerSection = () => {
             Editing Platform
           </h1>
           <div className="centredivbuitton">
-            <NavLink to="/image-editor">
-              <button>Start a WhiteBoard</button>
-            </NavLink>
+            <button
+              className="choose-img"
+              onClick={() => {
+                isLoggedIn
+                  ? props.history.push("/image-editor")
+                  : props.setSelectedTool("image-editor");
+              }}
+            >
+              Start a WhiteBoard
+            </button>
           </div>
           <p>Free Forever No credit Card Required </p>
         </div>

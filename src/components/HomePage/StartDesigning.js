@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "../../assets/startdesigning.png";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const StartDesigning = (props) => {
-  // const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   return (
     <div className="mainsection" style={{ marginTop: "0%" }}>
@@ -14,18 +14,12 @@ const StartDesigning = (props) => {
             Our video editor comes with all the features required to create
             great videos – no experience needed.
           </p>
-          {/* <button
+          <button
+            className="choose-img"
             onClick={() => {
               isLoggedIn
-                ? props.history.push("/video-editor")
-                : props.setSelectedTool("video-editor");
-            }}
-          >
-            Upload your Video
-          </button> */}
-          <button
-            onClick={() => {
-              props.history.push("/image-editor");
+                ? props.history.push("/image-editor")
+                : props.setSelectedTool("image-editor");
             }}
           >
             Upload your Video

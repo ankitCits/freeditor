@@ -9,13 +9,17 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { StoreProvider } from "./helpers/storeProvider";
 import rootStore from "./stores/rootStore";
+import { Provider } from "react-redux";
+import store from "./store";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StoreProvider value={rootStore}>
-      <App />
-    </StoreProvider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <StoreProvider value={rootStore}>
+        <App />
+      </StoreProvider>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
