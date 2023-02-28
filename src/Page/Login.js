@@ -76,6 +76,7 @@ const Login = ({
           },
         })
         .then((response) => {
+          console.log("GOOGLE_API_RESPONSE>>",response)
           dispatch(loginUserAuthAction(response.data.auth_token));
           hideLogin();
           resetForm();

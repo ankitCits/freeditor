@@ -15,12 +15,44 @@ const Header: React.FC = () => {
     >
       <div className="header__items">
         <div className="header__items-group">
-          {/* <div className="header__item">
+          <div className="header__item">
             <UndoButton />
           </div>
           <div className="header__item">
             <RedoButton />
-          </div> */}
+          </div>
+          <button
+            type="button"
+            onClick={e => {
+              e.preventDefault();
+              window.location.href = "https://freeditor.wooshelf.in/";
+            }}
+            style={{
+              width: "100px",
+              height: "30px",
+              backgroundColor: "#fff",
+              borderRadius: 10
+            }}
+          >
+            Home
+          </button>
+
+          <button
+            type="button"
+            onClick={e => {
+              e.preventDefault();
+              window.location.href = "https://freevideo.wooshelf.in";
+            }}
+            style={{
+              width: "100px",
+              marginLeft: "20px",
+              height: "30px",
+              backgroundColor: "#fff",
+              borderRadius: 10
+            }}
+          >
+            Video
+          </button>
         </div>
         <div className="header__items-group">
           <div className="header__item">
